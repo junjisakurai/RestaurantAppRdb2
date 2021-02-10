@@ -1,0 +1,32 @@
+($proc, $menu_id, $user_id, $user_m, $sex, $age, $review, $evaluation, $op_cd)
+
+CALL sp_review('3','0000000001', '1000000020','テスト_user_m2','2','30','2テストレビュー_review','4','0000000001');
+CALL sp_review('3','0000000001', '1000000010','テスト_user_m2','2','30','2テストレビュー_review','4','1000000010');
+
+Error Code: 1175. You are using safe update mode and you tried to update a table without a WHERE that uses a KEY column To disable safe mode,
+ toggle the option in Preferences -> SQL Editor and reconnect.
+
+select ROW_COUNT() from user_m where user_m.user_id = '1000000010';
+select * from review where review.user_id = '1000000010' and review.menu_id = '0000000001';
+
+
+ALTER TABLE テーブル名】MODIFY 【カラム名】 【データ型】
+CHARACTER SET 【文字コード】COLLATE 【文字コード照合】;
+
+例:
+ALTER TABLE user_m MODIFY user_name varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+ALTER TABLE user_m MODIFY user_name varchar(255) CHARACTER SET utf8 NOT NULL COMMENT 'ユーザー名' COLLATE utf8_general_ci;
+
+
+Error Code: 1175. You are using safe update mode and you tried to update a table without a WHERE that uses a KEY column To disable safe mode, 
+toggle the option in Preferences -> SQL Editor and reconnect.
+
+
+  	UPDATE user_m
+  	    SET user_m.user_name = 'テスト_user_m2', user_m.sex = '2', user_m.age = '30', user_m.update_date = CURRENT_TIMESTAMP, user_m.update_op_cd = '1000000010'
+  	    WHERE user_m.user_id = '1000000010';
+  	    
+  	UPDATE review
+  	    SET review.review = '2テストレビュー_review', review.evaluation = '4', review.update_date = CURRENT_TIMESTAMP, review.update_op_cd = '1000000010'
+  	    WHERE review.user_id = '1000000010' and review.menu_id = '0000000001';

@@ -1,0 +1,44 @@
+ÅyÉâÉtÅz----------------------------------------------------------------------------------------
+select * user where user_id = $user_id
+if user.count == 0
+	insert user user_id = $user_id
+else
+	update user set íl where user user_id = $user_id
+
+select * review where user_id = $user_id and menu_id = $menu_id
+if review.count == 0
+	insert review user_id = $user_id and menu_id = $menu_id
+else
+	update review set íl where user user_id = $user_id and menu_id = $menu_id
+
+
+Åyê¥èëÅz----------------------------------------------------------------------------------------
+user_id VARCHAR(10), IN user_m VARCHAR(255), IN sex VARCHAR(1), IN age VARCHAR(3), IN review VARCHAR(255), IN evaluation VARCHAR(1), IN op_cd CURRENT_TIMESTAMP
+IF proc = 1 THEN
+ELSEIF proc = 2 THEN
+ELSE
+END IF;
+
+--------Ç±Ç±Ç©ÇÁ
+  -- éÊìæåèêîäiî[óp
+  DECLARE row_count INT;
+
+  select ROW_COUNT() user_m where user_m.user_id = user_id INTO row_count;
+  IF row_count = 0 THEN
+  	INSERT INTO user_m (`user_id`, `user_name`, `sex`, `age`, `user_kbn`, `create_date`, `create_op_cd`, `update_date`, `update_op_cd`, `abolish_date`, `abolish_op_cd`) VALUES
+  	(user_id, user_m, sex, age, '0', CURRENT_TIMESTAMP, op_cd, CURRENT_TIMESTAMP, op_cd, NULL, 'Umknown'),
+  ELSE
+  	UPDATE user_m
+  	    SET user_m.user_name = user_name, user_m.sex = sex, user_m.age = age, user_m.update_date = CURRENT_TIMESTAMP, user_m.update_op_cd = op_cd
+  	    WHERE user_m.user_id = user_id
+  END IF;
+
+  select ROW_COUNT() review where review.user_id = user_id and review.menu_id = menu_id INTO row_count;
+  IF row_count = 0 THEN
+  	INSERT INTO review (`menu_id`, `user_id`, `review`, `evaluation`, `create_date`, `create_op_cd`, `update_date`, `update_op_cd`, `abolish_date`, `abolish_op_cd`) VALUES
+  	(menu_id, user_id, review, evaluation, CURRENT_TIMESTAMP, op_cd, CURRENT_TIMESTAMP, op_cd, NULL, 'Umknown');
+  ELSE
+  	UPDATE review
+  	    SET review.review = review, review.evaluation = evaluation, review.update_date = CURRENT_TIMESTAMP, review.update_op_cd = op_cd
+  	    WHERE review.user_id = user_id and review.menu_id = menu_id
+  END IF;

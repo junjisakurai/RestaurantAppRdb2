@@ -1,0 +1,20 @@
+Error Code: 1175. You are using safe update mode and you tried to update a table without a WHERE that uses a KEY column To disable safe mode, toggle the option in Preferences -> SQL Editor and reconnect.
+
+https://yoneyore.hatenablog.com/entry/2016/01/05/200047
+
+MySQLワークベンチでupdate文を実行すると1175のエラーが発生
+【事象】
+
+MySQLのワークベンチでUPDATE文を実行すると、以下のエラーが発生した。
+Error Code: 1175. You are using safe update mode and you tried to update a table without a WHERE that uses a KEY column To disable safe mode, toggle the option in Preferences -> SQL Editor and reconnect. 0.062 sec
+ 
+【原因】
+大量の(主キー以外の)update/deleteをワークベンチから行えない様に制約を付けてくれているため。 
+
+
+【対応方法(恒久的)】
+ワークベンチで以下の対応をする。
+1. [Edit] - [Preferences] を開く。
+2. SQL Editorタブを開く。
+3. 下の方にあるOtherカテゴリのSafe Updates ～というチェックボックスを外す。
+4. サーバーに対して再接続する。ワークベンチの再起動でもよい。
