@@ -20,7 +20,7 @@ https://restaurant-app-rdb2-junji.herokuapp.com/
 <br>
 ■ 画面構成
 <br>
-https://user-images.githubusercontent.com/54252926/107868910-c6f08500-6ecb-11eb-9d9c-531b42fad468.jpg
+![ポートフォリオ画面](https://user-images.githubusercontent.com/54252926/107868910-c6f08500-6ecb-11eb-9d9c-531b42fad468.jpg)
 
 ■ ファイル構成
 <pre>
