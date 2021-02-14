@@ -21,7 +21,7 @@ https://restaurant-app-rdb2-junji.herokuapp.com/
 ■ 画面構成
 <br>
 ![ポートフォリオ画面](https://user-images.githubusercontent.com/54252926/107885623-c5ac7000-6f3e-11eb-8ca0-b65b5a34133d.jpg)
-
+<br>
 ■ ファイル構成
 <pre>
 ●画面クラス ------------------------------------
