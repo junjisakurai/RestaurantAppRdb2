@@ -21,6 +21,9 @@ index.php
 レビュー閲覧画面
 show.php
 
+レビュー投稿・編集画面
+review_edit.php
+
 注文内容確認画面
 confirm.php
 
@@ -29,6 +32,18 @@ stylesheet.css
 
 ■topへ戻る機能  ----------------
 index.js
+■画面遷移機能   ----------------
+main.js
+
+■レビュー      ----------------
+レビュー表示機能
+review_item.php
+
+レビューDB登録機能
+review_confirm.php
+
+評価機能_チェック機能
+review_edit.js
 
 ■チャート      -----------------
 チャート描画スクリプト
